@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}Listado de Celulares{% endblock %}
+
+{% block content %}
+    <h1>Listado de Celulares</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Costo</th>
+                <th>Modelo</th>
+                <th>Marca</th>
+                <th>Categoría</th>
+                <th>Características</th>
+                <th>Stock</th>
+                <th>Proveedor</th>
+                <th>Accesorio</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for equipo in equipos %}
+            <tr>
+                <td>{{ equipo.nombre }}</td>
+                <td>{{ equipo.costo }}</td>
+                <td>{{ equipo.modelo }}</td>
+                <td>{{ equipo.marca }}</td>
+                <td>{{ equipo.categoria }}</td>
+                <td>{{ equipo.caracteristica }}</td>
+                <td>{{ equipo.stock }}</td>
+                <td>{{ equipo.proveedor }}</td>
+                <td>{{ equipo.accesorio }}</td>
+                <td>
+<!-- EDITAR O ELIMINAR CELULAR -->
+                    <a href="{{ url_for('edit_equipo', id=equipo.id) }}">Editar</a> |
+                    <a href="{{ url_for('delete_equipo', id=equipo.id) }}" onclick="return confirm('¿Estás seguro de eliminar este celular?');">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

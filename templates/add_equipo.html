@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block title %}Agregar Celular{% endblock %}
+
+{% block content %}
+    <h1>Agregar Celular</h1>
+    <form method="post">
+        {{ form.hidden_tag() }}
+        <div>
+            {{ form.nombre.label }}<br>
+            {{ form.nombre() }}<br>
+            {% for error in form.nombre.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </div>
+        <div>
+            {{ form.costo.label }}<br>
+            {{ form.costo() }}<br>
+            {% for error in form.costo.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </div>
+        <div>
+            {{ form.modelo.label }}<br>
+            {{ form.modelo() }}<br>
+            {% for error in form.modelo.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </div>
+        <div>
+            {{ form.marca.label }}<br>
+            {{ form.marca() }}<br>
+            {% for error in form.marca.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </div>
+        <div>
+            {{ form.categoria.label }}<br>
+            {{ form.categoria() }}<br>
+            {% for error in form.categoria.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </div>
+        <div>
+            {{ form.caracteristica.label }}<br>
+            {{ form.caracteristica() }}<br>
+            {% for error in form.caracteristica.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </div>
+        <div>
+            {{ form.stock.label }}<br>
+            {{ form.stock() }}<br>
+            {% for error in form.stock.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </div>
+        <div>
+            {{ form.proveedor.label }}<br>
+            {{ form.proveedor() }}<br>
+            {% for error in form.proveedor.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </div>
+        <div>
+            {{ form.accesorio.label }}<br>
+            {{ form.accesorio() }}<br>
+            {% for error in form.accesorio.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </div>
+        <div>
+            {{ form.submit() }}
+        </div>
+    </form>
+{% endblock %}
